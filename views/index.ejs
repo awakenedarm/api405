@@ -1,0 +1,57 @@
+<html>
+    <head>
+            <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <link rel="stylesheet" href="http://www.keybr.com/res/css/practice__202d9c017ff750bbf052cbb4650b22b4.css">
+    </head>
+    <body>
+        <center>
+        <center><h2  style="text-align:center">Add data</h2></center>
+        <form method='POST' action='/user'>
+            <label>Name</label><br>
+            <input type='text' name='name'><br>
+            <label>Age</label><br>
+            <input type='text' name='age'><br>
+            <label>Email</label><br>
+            <input type='text' name='email'><br>
+            <input type='submit' value='Submit'>
+        </form><br><br>
+        <h2  style="text-align:center">Data list</h2>
+        
+        <table><tr><td>ID</td><td>NAME</td><td>AGE</td><td>EMAIL</td></tr>
+                <% for(var i=0; i < result.length; i++) { %>
+                   <tr>
+                     <td><%= result[i].id %></td>
+                     <td><%= result[i].name %></td>
+                     <td><%= result[i].age %></td>
+                     <td><%= result[i].email %></td>
+                   </tr>
+                <% } %>
+        </table><br>
+        <h2 style="text-align:center">You can do everything. Only DELETE method that need token.</h2><br>
+
+      
+
+        <h2  style="text-align:center">Login to get token</h2>
+        <form method='POST' action='/login'>
+            <label>username</label><br>
+            <input type='text' name='username'><br>
+            <label>Password</label><br>
+            <input type='text' name='password'><br>
+            <input type='submit' value='Login'>
+        </form><br>
+
+        <h2 style="text-align:center">Add admin account</h2>
+        <form method='POST' action='/admin'>
+            <label>username</label><br>
+            <input type='text' name='username'><br>
+            <label>Password</label><br>
+            <input type='text' name='password'><br>
+            <input type='submit' value='Add new admin!'>
+        </form>
+        </center>
+    </body>
+</html>
