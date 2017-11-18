@@ -64,7 +64,7 @@ mongoClient.connect(url, (err, db)=>{
             else{
                 for(let user of result){
                     if(user.username == req.body.username && user.password == req.body.password){
-                        let token = jwt.sign({admin:true}, secret,{ expiresIn:60})
+                        let token = jwt.sign({admin:true}, secret,{ expiresIn:60*5})
                         res.send({status:'success', token:token, msg: "warning expire in 1 minute!!!"})   
                         return                 
                     }
